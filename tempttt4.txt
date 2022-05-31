@@ -1,0 +1,110 @@
+ Program
+   Init Variables
+   Robot Program
+     MoveJ
+       default
+     If tictactoe_pos≟0
+       Turncounter≔0
+     If tictactoe_pos≠0
+       If tictactoe_pos≠var_1
+         Set UR10_PC=0
+         MoveJ
+           Pickup_Pos
+           pickupdown1
+           If cleanup≠2
+             While Loop_2<Turncounter
+               pickupdown2
+               Loop_2≔Loop_2+1
+             Loop_2≔0
+             Turncounter≔Turncounter+1
+             If Turncounter>5
+               Turncounter≔0
+           Set UR10_Pickup_Rea=2
+           Wait done_sucking≟2
+           Pickup_Pos
+         If tictactoe_pos≟1
+           MoveJ
+             Waypoint1
+             going_down
+             Set UR10_Pickup_Rea=0
+             Wait done_sucking≟2
+             Waypoint1
+             default
+             var_1≔tictactoe_pos
+         If tictactoe_pos≟2
+           MoveJ
+             Waypoint_2
+             going_down
+             Set UR10_Pickup_Rea=0
+             Wait done_sucking≟2
+             Waypoint_2
+             default
+             var_1≔tictactoe_pos
+         If tictactoe_pos≟3
+           MoveJ
+             Waypoint3
+             going_down
+             Set UR10_Pickup_Rea=0
+             Wait done_sucking≟2
+             Waypoint3
+             default
+             var_1≔tictactoe_pos
+         If tictactoe_pos≟4
+           MoveJ
+             Waypoint_4
+             going_down
+             Set UR10_Pickup_Rea=0
+             Wait done_sucking≟2
+             Waypoint_4
+             default
+             var_1≔tictactoe_pos
+         If tictactoe_pos≟5
+           MoveJ
+             Waypoint_5
+             going_down
+             Set UR10_Pickup_Rea=0
+             Wait done_sucking≟2
+             Waypoint_5
+             default
+             var_1≔tictactoe_pos
+         If tictactoe_pos≟6
+           MoveJ
+             Waypoint_6
+             going_down
+             Set UR10_Pickup_Rea=0
+             Wait done_sucking≟2
+             Set UR10_Pickup_Rea=0
+             Waypoint_6
+             default
+             var_1≔tictactoe_pos
+         If tictactoe_pos≟7
+           MoveJ
+             Waypoint_7
+             going_down
+             Set UR10_Pickup_Rea=0
+             Wait done_sucking≟2
+             Waypoint_7
+             default
+             var_1≔tictactoe_pos
+         If tictactoe_pos≟8
+           MoveJ
+             Waypoint_8
+             going_down
+             Set UR10_Pickup_Rea=0
+             Wait done_sucking≟2
+             Waypoint_8
+             default
+             var_1≔tictactoe_pos
+         If tictactoe_pos≟9
+           MoveJ
+             Waypoint_9
+             going_down
+             Set UR10_Pickup_Rea=0
+             Wait done_sucking≟2
+             Waypoint_9
+             default
+             var_1≔tictactoe_pos
+       Else
+         Set UR10_PC=1
+     MoveJ
+       Waypoint_1

@@ -1,0 +1,150 @@
+ Program
+   Init Variables
+   Robot Program
+     timer_1: Start
+     timer_2: Start
+     If UR_Reset≠2
+       Set CO[0]=Off
+       Wait: 2.0
+       Set Vacuum_Done=0
+       timer_2: Reset
+     ElseIf UR10_Pickup≟2
+       If CLEAN_UP≟2
+         Set CO[0]=Off
+       Else
+         Set CO[0]=On
+       Wait: 2.0
+       Set Vacuum_Done=2
+       timer_2: Reset
+     Else
+       If CLEAN_UP≟2
+         Set CO[0]=On
+       Else
+         Set CO[0]=Off
+       Wait: 2.0
+       Set Vacuum_Done=0
+       timer_1: Reset
+     If ticktactoe_pos≟0
+       Turncounter≔0
+     MoveJ
+       default
+       pickupdown2
+     If ticktactoe_pos≠0
+       Set ur3pc=0
+       If ticktactoe_pos≠var_4
+         MoveJ
+           default_pickup
+           Pickupdown1
+           If CLEAN_UP≠2
+             Loop Loop_1<Turncounter
+               pickupdown2
+               Loop_1≔Loop_1+1
+             Loop_1≔0
+             Turncounter≔Turncounter+1
+             If Turncounter>5
+               Turncounter≔0
+             Vacuum Grip  (1)           
+           Else
+             Vacuum Release  (1)           
+           default_pickup
+         If ticktactoe_pos≟1
+           MoveJ
+             Waypoint_1
+             Going_down
+             If CLEAN_UP≟2
+               Vacuum Grip  (1)           
+             Else
+               Vacuum Release  (1)           
+             Waypoint_1
+             default
+             var_4≔ticktactoe_pos
+         If ticktactoe_pos≟2
+           MoveJ
+             Waypoint_2
+             Going_down
+             If CLEAN_UP≟2
+               Vacuum Grip  (1)           
+             Else
+               Vacuum Release  (1)           
+             Waypoint_2
+             default
+             var_4≔ticktactoe_pos
+         If ticktactoe_pos≟3
+           MoveJ
+             Waypoint_3
+             Going_down
+             If CLEAN_UP≟2
+               Vacuum Grip  (1)           
+             Else
+               Vacuum Release  (1)           
+             Waypoint_3
+             default
+             var_4≔ticktactoe_pos
+         If ticktactoe_pos≟4
+           MoveJ
+             Waypoint_4
+             Going_down
+             If CLEAN_UP≟2
+               Vacuum Grip  (1)           
+             Else
+               Vacuum Release  (1)           
+             Waypoint_4
+             default
+             var_4≔ticktactoe_pos
+         If ticktactoe_pos≟5
+           MoveJ
+             Waypoint_5
+             Going_down
+             If CLEAN_UP≟2
+               Vacuum Grip  (1)           
+             Else
+               Vacuum Release  (1)           
+             Waypoint_5
+             default
+             var_4≔ticktactoe_pos
+         If ticktactoe_pos≟6
+           MoveJ
+             Waypoint_6
+             Going_down
+             If CLEAN_UP≟2
+               Vacuum Grip  (1)           
+             Else
+               Vacuum Release  (1)           
+             Waypoint_6
+             default
+             var_4≔ticktactoe_pos
+         If ticktactoe_pos≟7
+           MoveJ
+             Waypoint_7
+             Going_down
+             If CLEAN_UP≟2
+               Vacuum Grip  (1)           
+             Else
+               Vacuum Release  (1)           
+             Waypoint_7
+             default
+             var_4≔ticktactoe_pos
+         If ticktactoe_pos≟8
+           MoveJ
+             Waypoint_8
+             Going_down
+             If CLEAN_UP≟2
+               Vacuum Grip  (1)           
+             Else
+               Vacuum Release  (1)           
+             Waypoint_8
+             default
+             var_4≔ticktactoe_pos
+         If ticktactoe_pos≟9
+           MoveJ
+             Waypoint_9
+             Going_down
+             If CLEAN_UP≟2
+               Vacuum Grip  (1)           
+             Else
+               Vacuum Release  (1)           
+             Waypoint_9
+             default
+             var_4≔ticktactoe_pos
+       Else
+         Set ur3pc=1
